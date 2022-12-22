@@ -1,5 +1,6 @@
 from logging import FileHandler, StreamHandler, INFO, basicConfig, error as log_error, info as log_info
 from os import path as ospath, environ, execl as osexecl
+from sys import executable
 from subprocess import run as srun
 from requests import get as rget
 from dotenv import load_dotenv
