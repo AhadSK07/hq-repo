@@ -7,4 +7,4 @@ COPY . .
 
 RUN pip3 install --no-cache-dir -r reqs.txt
 
-CMD ["bash", "start.sh"]
+CMD ["python3", "starter.py"]
