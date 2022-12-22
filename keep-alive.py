@@ -8,7 +8,7 @@ if BASE_URL:
     while True:
         try:
             rget(BASE_URL).status_code
-            sleep(1200)
+            sleep(600)
         except Exception as e:
             logerror(f"keep-alive.py: {e}")
             sleep(2)
