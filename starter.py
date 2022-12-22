@@ -1,7 +1,7 @@
 from logging import FileHandler, StreamHandler, INFO, basicConfig, error as log_error, info as log_info
 from os import path as ospath, environ, execl as osexecl
 from sys import executable
-from subprocess import run as srun
+from subprocess import run as srun, Popen
 from requests import get as rget
 from dotenv import load_dotenv
 from pymongo import MongoClient
@@ -57,6 +57,8 @@ if DATABASE_URL is not None:
         environ['UPSTREAM_REPO'] = config_dict['UPSTREAM_REPO']
         environ['UPSTREAM_BRANCH'] = config_dict['UPSTREAM_BRANCH']
     conn.close()
+
+Popen(["python3", "keep-alive.py"])
 
 UPSTREAM_REPO = environ.get('UPSTREAM_REPO', '')
 if len(UPSTREAM_REPO) == 0:
