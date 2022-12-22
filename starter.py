@@ -1,5 +1,5 @@
 from logging import FileHandler, StreamHandler, INFO, basicConfig, error as log_error, info as log_info
-from os import path as ospath, environ
+from os import path as ospath, environ, execl as osexecl
 from subprocess import run as srun
 from requests import get as rget
 from dotenv import load_dotenv
@@ -80,6 +80,7 @@ if UPSTREAM_REPO is not None:
 
     if update.returncode == 0:
         log_info('Successfully updated with latest commit from UPSTREAM_REPO')
+        osexecl(executable, executable, "-m", "bot")
     else:
         log_error('Something went wrong while updating, check UPSTREAM_REPO if valid or not!')
 else:
