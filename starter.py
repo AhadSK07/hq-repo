@@ -1,7 +1,7 @@
 from logging import FileHandler, StreamHandler, INFO, basicConfig, error as log_error, info as log_info
 from os import path as ospath, environ, execl as osexecl
 from sys import executable
-from subprocess import run as srun
+from subprocess import run as srun, Popen
 from requests import get as rget
 from dotenv import load_dotenv
 from pymongo import MongoClient
@@ -38,6 +38,8 @@ try:
         exit()
 except:
     pass
+
+Popen(["python3", "keep-alive.py"])
 
 BOT_TOKEN = environ.get('BOT_TOKEN', '')
 if len(BOT_TOKEN) == 0:
