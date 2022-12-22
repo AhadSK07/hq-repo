@@ -1,4 +1,6 @@
 config.env
+keep-alive.py
+starter.py
 *auth_token.txt
 *.pyc
 data*
